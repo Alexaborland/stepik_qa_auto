@@ -27,10 +27,10 @@ class Truck(Car):
         """Get the wheels quantity"""
         print(f'The truck has {str(self.wheels)} wheels')
 
-    def truck_information(self):
-        """Getting the truck's description"""
-        print(f'This is a {self.model}, the {str(self.year)} release, the engine volume is {str(self.engine_volume)}L, '
-              f'the price is {str(self.price)}$, the mileage is {str(self.mileage)}km, it has {str(self.wheels)} wheels')
+    # def truck_information(self):
+    #     """Getting the truck's description"""
+    #     print(f'This is a {self.model}, the {str(self.year)} release, the engine volume is {str(self.engine_volume)}L, '
+    #           f'the price is {str(self.price)}$, the mileage is {str(self.mileage)}km, it has {str(self.wheels)} wheels')
 
 
 

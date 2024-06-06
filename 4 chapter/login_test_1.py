@@ -38,6 +38,13 @@ time.sleep(2)
 link_about = driver.find_element(By.XPATH, '//a[@id="about_sidebar_link"]')
 link_about.click()
 
+'''Going to the back and forward page'''
+driver.back()
+print('We went back')
+time.sleep(2)
+driver.forward()
+print('We went forward')
+
 '''Scrolling'''
 # driver.execute_script('window.scrollTo(0, 200)')
 

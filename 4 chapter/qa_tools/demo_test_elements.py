@@ -1,3 +1,5 @@
+import time
+
 from selenium import webdriver
 from selenium.webdriver import ActionChains
 from selenium.webdriver.chrome.service import Service
@@ -13,7 +15,8 @@ g = Service()
 driver = webdriver.Chrome(options=options, service=g)
 # base_url = 'https://demoqa.com/checkbox'
 # base_url = 'https://demoqa.com/radio-button'
-base_url = 'https://demoqa.com/buttons'
+# base_url = 'https://demoqa.com/buttons'
+base_url = 'https://www.mvideo.ru/brand/apple-685?categoryId=10'
 driver.get(base_url)
 driver.maximize_window()
 
@@ -32,12 +35,19 @@ driver.maximize_window()
 # print('Passed')
 
 '''Double click'''
+# action = ActionChains(driver)
+#
+# doubleclick_button = driver.find_element(By.XPATH, '//button[@id="doubleClickBtn"]')
+# action.double_click(doubleclick_button).perform()
+#
+# right_click_button = driver.find_element(By.XPATH, '//button[@id="rightClickBtn"]')
+# action.context_click(right_click_button).perform()
+
+'''Slider'''
+time.sleep(5)
 action = ActionChains(driver)
 
-doubleclick_button = driver.find_element(By.XPATH, '//button[@id="doubleClickBtn"]')
-action.double_click(doubleclick_button).perform()
+slider_square = driver.find_element(By.XPATH, '//a[@class="ui-slider-handle ui-state-default ui-corner-all"]')
 
-right_click_button = driver.find_element(By.XPATH, '//button[@id="rightClickBtn"]')
-action.context_click(right_click_button).perform()
+action.click_and_hold(slider_square).move_by_offset(200, 0).release().perform()
 
-'''Calendar'''

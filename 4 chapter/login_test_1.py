@@ -4,6 +4,7 @@ from selenium import webdriver
 from selenium.webdriver import ActionChains
 from selenium.webdriver.chrome.service import Service
 from selenium.webdriver.common.by import By
+from selenium.webdriver.support.select import Select
 
 options = webdriver.ChromeOptions()
 options.add_experimental_option("detach", True)
@@ -30,20 +31,24 @@ button_login = driver.find_element(By.XPATH, '//input[@id="login-button"]')
 button_login.click()
 print('Click login button')
 
+select = Select(driver.find_element(By.XPATH, '//select[@class="product_sort_container"]'))
+# select.select_by_visible_text('Name (Z to A)')
+select.select_by_value('za')
+
 '''Opening the Menu'''
-menu = driver.find_element(By.XPATH, '//button[@id="react-burger-menu-btn"]')
-menu.click()
-print('Click Menu button')
-time.sleep(2)
-link_about = driver.find_element(By.XPATH, '//a[@id="about_sidebar_link"]')
-link_about.click()
+# menu = driver.find_element(By.XPATH, '//button[@id="react-burger-menu-btn"]')
+# menu.click()
+# print('Click Menu button')
+# time.sleep(2)
+# link_about = driver.find_element(By.XPATH, '//a[@id="about_sidebar_link"]')
+# link_about.click()
 
 '''Going to the back and forward page'''
-driver.back()
-print('We went back')
-time.sleep(2)
-driver.forward()
-print('We went forward')
+# driver.back()
+# print('We went back')
+# time.sleep(2)
+# driver.forward()
+# print('We went forward')
 
 '''Scrolling'''
 # driver.execute_script('window.scrollTo(0, 200)')

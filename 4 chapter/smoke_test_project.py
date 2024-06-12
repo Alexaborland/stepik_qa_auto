@@ -28,6 +28,13 @@ button_login = driver.find_element(By.XPATH, '//input[@id="login-button"]')
 button_login.click()
 print('Click login button')
 
+if input(int) == 1:
+    add_to_cart_product_1 = driver.find_element(By.XPATH, '//button[@id="add-to-cart-sauce-labs-backpack"]')
+    add_to_cart_product_1.click()
+elif input(int) == 2:
+    add_to_cart_product_1 = driver.find_element(By.XPATH, '//button[@id=add-to-cart-sauce-labs-bike-light]')
+    add_to_cart_product_1.click()
+
 
 '''Info product 1'''
 product_1 = driver.find_element(By.XPATH, '//a[@id="item_4_title_link"]')
